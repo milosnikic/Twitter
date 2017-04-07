@@ -5,7 +5,7 @@ package com.twitter.poruke;
  * sa odgovarajucim korisnikom.
  * 
  * @author Milos Nikic
- * @version %I% %G%
+ * @version 1.1
  * @since 07.04.2017.
  */
 public class TwitterPoruka {
@@ -21,7 +21,7 @@ public class TwitterPoruka {
 
 	/**
 	 * Metoda koja vraca naziv korisnika
-	 * @return korisnik naziv korisnika
+	 * @return naziv korisnika
 	 */
 	public String getKorisnik() {
 		return korisnik;
@@ -41,7 +41,7 @@ public class TwitterPoruka {
 
 	/**
 	 * Metoda vraca poruku za odgovarajuceg korisnika.
-	 * @return poruka poruka odgovarajuceg korisnika
+	 * @return poruku odgovarajuceg korisnika
 	 */
 	public String getPoruka() {
 		return poruka;

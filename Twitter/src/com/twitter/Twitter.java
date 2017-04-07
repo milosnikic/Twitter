@@ -4,11 +4,11 @@ import java.util.LinkedList;
 import com.twitter.poruke.TwitterPoruka;
 
 /**
- * 
+ * <h1> Twitter </h1>
  * Ova klasa sluzi za manipulaciju porukama.
  * 
  * @author Milos Nikic
- * @version %I% %G%
+ * @version 1.1
  * @since 07.04.2017.
  */
 public class Twitter {
@@ -22,7 +22,7 @@ public class Twitter {
 	private LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();
 	/**
 	 * Metoda vraca poruke tipa LinkedList
-	 * @return poruke lista poruka
+	 * @return listu poruka
 	 */
 	public LinkedList<TwitterPoruka> getPoruke() {
 		return poruke;
@@ -40,7 +40,7 @@ public class Twitter {
 
 	/**
 	 * Metoda vraca listu svih poruka.
-	 * @return poruke lista poruka
+	 * @return listu poruka
 	 */
 	public LinkedList<TwitterPoruka> vratiSvePoruke() {
 		return poruke;
