@@ -57,6 +57,16 @@ public class TwitterPorukaTest {
 		p.setPoruka("");
 
 	}
+	
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetPorukaPrekoracenje() {
+		String poruka = "";
+		for (int i = 0; i < 141; i++) {
+			poruka += "a";
+		}
+		p.setPoruka(poruka);
+
+	}
 	@Test
 	public void testToString() {
 		p.setKorisnik("Milos");
