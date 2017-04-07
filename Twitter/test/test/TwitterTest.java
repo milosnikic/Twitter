@@ -81,6 +81,35 @@ public class TwitterTest {
 		assertArrayEquals(niz, poredba);
 
 	}
+	
+	@Test
+	public void testVratiPorukeMaxManjeOdNula() {
+		TwitterPoruka p = new TwitterPoruka();
+		TwitterPoruka p1 = new TwitterPoruka();
+
+		p.setKorisnik("Milos");
+		p.setPoruka("Poruka");
+
+		p1.setKorisnik("Dragan");
+		p1.setPoruka("Porukica");
+
+		LinkedList<TwitterPoruka> poruke = new LinkedList<>();
+
+		poruke.add(p);
+		poruke.add(p1);
+
+		t.setPoruke(poruke);
+		
+		TwitterPoruka[] niz = new TwitterPoruka[100];
+		//Postavljena je vrednost na sto, jer je tako odredjeno u metodi
+		//da se maks broj postavlja na 100, sto je dimenzija niza.
+		niz[0] = p;
+		niz[1] = p1;
+		TwitterPoruka[] poredba = t.vratiPoruke(-1, "Poruk");
+		
+		assertArrayEquals(niz, poredba);
+
+	}
 
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testVratiPorukeNull() {
