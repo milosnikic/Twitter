@@ -14,6 +14,7 @@ import com.twitter.poruke.TwitterPoruka;
 public class TwitterTest {
 
 	private Twitter t;
+
 	@Before
 	public void setUp() throws Exception {
 		t = new Twitter();
@@ -26,26 +27,70 @@ public class TwitterTest {
 
 	@Test
 	public void testVratiSvePoruke() {
-		
-		
-		
+		TwitterPoruka p = new TwitterPoruka();
+		TwitterPoruka p1 = new TwitterPoruka();
+
+		p.setKorisnik("Milos");
+		p.setPoruka("Poruka");
+
+		p1.setKorisnik("Dragan");
+		p1.setPoruka("Porukica");
+
+		LinkedList<TwitterPoruka> poruke = new LinkedList<>();
+
+		poruke.add(p);
+		poruke.add(p1);
+
+		t.setPoruke(poruke);
+
+		assertEquals(poruke, t.vratiSvePoruke());
+
 	}
 
 	@Test
 	public void testUnesi() {
-		TwitterPoruka p = new TwitterPoruka();
-		p.setKorisnik("Milos");
-		p.setPoruka("Poruka");
-		
-		LinkedList<TwitterPoruka> poruke = new LinkedList<>();
-		poruke.add(p);
-		
-		
+		t.unesi("Milos", "Poruka");
+
+		assertEquals("Milos", t.getPoruke().getLast().getKorisnik());
+		assertEquals("Poruka", t.getPoruke().getLast().getPoruka());
 	}
 
 	@Test
 	public void testVratiPoruke() {
-		fail("Not yet implemented");
+		TwitterPoruka p = new TwitterPoruka();
+		TwitterPoruka p1 = new TwitterPoruka();
+
+		p.setKorisnik("Milos");
+		p.setPoruka("Poruka");
+
+		p1.setKorisnik("Dragan");
+		p1.setPoruka("Porukica");
+
+		LinkedList<TwitterPoruka> poruke = new LinkedList<>();
+
+		poruke.add(p);
+		poruke.add(p1);
+
+		t.setPoruke(poruke);
+		
+		TwitterPoruka[] niz = new TwitterPoruka[2];
+		niz[0] = p;
+		niz[1] = p1;
+		TwitterPoruka[] poredba = t.vratiPoruke(2, "Poruk");
+		
+		assertArrayEquals(niz, poredba);
+
+	}
+
+	@Test(expected = java.lang.RuntimeException.class)
+	public void testVratiPorukeNull() {
+		t.vratiPoruke(100, null);
+
+	}
+
+	@Test(expected = java.lang.RuntimeException.class)
+	public void testVratiPorukePrazan() {
+		t.vratiPoruke(100, "");
 	}
 
 }
