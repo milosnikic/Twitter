@@ -20,6 +20,23 @@ public class Twitter {
 	 * </ul>
 	 */
 	private LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();
+	/**
+	 * Metoda vraca poruke tipa LinkedList
+	 * @return poruke lista poruka
+	 */
+	public LinkedList<TwitterPoruka> getPoruke() {
+		return poruke;
+	}
+	
+	/**
+	 * Metoda postavlja listu poruka kao vrednost atributa poruke.
+	 * @param poruke nova lista poruka
+	 */
+	public void setPoruke(LinkedList<TwitterPoruka> poruke) {
+		if(poruke.isEmpty() || poruke == null)
+			throw new RuntimeException();
+		this.poruke = poruke;
+	}
 
 	/**
 	 * Metoda vraca listu svih poruka.
