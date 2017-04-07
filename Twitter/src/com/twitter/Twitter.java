@@ -19,7 +19,9 @@ public class Twitter {
 	 * <li>LinkedList<TwitterPoruka> poruke (lista poruka)</li>
 	 * </ul>
 	 */
+	
 	private LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();
+	
 	/**
 	 * Metoda vraca poruke tipa LinkedList
 	 * @return listu poruka
