@@ -55,7 +55,7 @@ public class Twitter {
 	 * @param maxBroj
 	 *            maksimalni broj poruka
 	 * @param tag
-	 *            koji je potrebno da poruka sadrzi
+	 *            tag koji je potrebno da poruka sadrzi
 	 * @return niz poruka koje sadrze trazeni tag
 	 * @throws java.lang.RuntimeException
 	 *             ako je tag null ili prazan string
